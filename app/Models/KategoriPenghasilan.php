@@ -10,6 +10,7 @@ class KategoriPenghasilan
 	protected static $path = 'data/kategori_penghasilan.csv';
 	protected static $headers = ['id', 'nama_kategori', 'batas_minimal', 'batas_maksimal'];
 
+	//mengambil semua data
 	public static function all()
 	{
 		if (!Storage::exists(self::$path)) {
@@ -27,11 +28,13 @@ class KategoriPenghasilan
 		}, $rows);
 	}
 
+	// mengambil satu data, biasanya untuk edit
 	public static function find($id)
 	{
 		return collect(self::all())->firstWhere('id', $id);
 	}
 
+	//menyimpan data di penyimpanan
 	public static function store(array $data)
 	{
 		$employees = self::all();
@@ -41,6 +44,7 @@ class KategoriPenghasilan
 		return $data;
 	}
 
+	//memperbarui data di penyimpanan
 	public static function update($id, array $data)
 	{
 		$employees = self::all();
@@ -62,6 +66,7 @@ class KategoriPenghasilan
 		self::saveAll(array_values($employees));
 	}
 
+	//menyimpan data hasil perubahan (store/update)
 	public static function saveAll(array $employees)
 	{
 		$lines = [implode(',', self::$headers)];
@@ -79,6 +84,7 @@ class KategoriPenghasilan
 		Storage::put(self::$path, implode(PHP_EOL, $lines));
 	}
 
+	//menghitung jumlah data
 	public static function count()
 	{
 		return count(self::all());

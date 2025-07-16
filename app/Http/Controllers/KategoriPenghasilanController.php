@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class KategoriPenghasilanController extends Controller
 {
+	// Menampilkan seluruh data kategori penghasilan
 	public function index()
 	{
 		$data['title'] = 'Data Kategori Penghasilan';
@@ -15,6 +16,7 @@ class KategoriPenghasilanController extends Controller
 		return view('kategori_penghasilan.index', $data);
 	}
 
+	// Menampilkan form untuk menambahkan kategori penghasilan baru
 	public function create()
 	{
 		$data['title'] = 'Tambah Kategori Penghasilan';
@@ -22,6 +24,7 @@ class KategoriPenghasilanController extends Controller
 		return view('kategori_penghasilan.create', $data);
 	}
 
+	// Menyimpan data kategori penghasilan baru ke penyimpanan data
 	public function store(Request $request)
 	{
 		$request->validate([
@@ -41,6 +44,7 @@ class KategoriPenghasilanController extends Controller
 		return redirect()->route('kategori_penghasilan.index')->with('sukses', 'Kategori Penghasilan berhasil ditambahkan !');
 	}
 
+	// Menampilkan form edit berdasarkan ID kategori penghasilan
 	public function edit($id)
 	{
 		$data['title'] = 'Edit Kategori Penghasilan';
@@ -49,6 +53,7 @@ class KategoriPenghasilanController extends Controller
 		return view('kategori_penghasilan.edit', $data);
 	}
 
+	// Memperbarui data kategori penghasilan berdasarkan ID
 	public function update($id, Request $request)
 	{
 		$request->validate([
@@ -67,6 +72,7 @@ class KategoriPenghasilanController extends Controller
 		return redirect()->route('kategori_penghasilan.index')->with('sukses', 'Kategori Penghasilan berhasil diubah !');
 	}
 
+	// Menghapus data kategori penghasilan berdasarkan ID
 	public function destroy($id)
 	{
 		KategoriPenghasilan::delete($id);

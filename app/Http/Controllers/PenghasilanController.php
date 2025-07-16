@@ -17,17 +17,18 @@ class PenghasilanController extends Controller
 			$search = strtolower($request->search);
 
 			$penghasilan = array_filter($penghasilan, function ($item) use ($search) {
-				return str_contains(strtolower($item['nik']), $search)
-					|| str_contains(strtolower($item['nama_lengkap']), $search);
+				return str_contains(strtolower($item['nik']), $search) // berdasarkan nik
+					|| str_contains(strtolower($item['nama_lengkap']), $search); // berdasarkan nama lengkap
 			});
 		}
 
-		$data['title'] = 'Data Penghasilan';
+		$data['title'] = 'Data Penghasilan'; // judul halaman
 		$data['penghasilan'] = $penghasilan;
 
 		return view('penghasilan.index', $data);
 	}
 
+	// menampilkan halaman tambah penghasilan 
 	public function create()
 	{
 		$data['title'] = 'Tambah Penghasilan';
@@ -35,8 +36,10 @@ class PenghasilanController extends Controller
 		return view('penghasilan.create', $data);
 	}
 
+	// melakukan request untuk menyimpan data ke penyimpanan
 	public function store(Request $request)
 	{
+		// validasi input 
 		$request->validate([
 			'nama_lengkap' => 'required',
 			'nik' => 'required|numeric',
@@ -58,26 +61,30 @@ class PenghasilanController extends Controller
 		return redirect()->route('penghasilan.index')->with('sukses', 'Penghasilan berhasil ditambahkan !');
 	}
 
+	//menampilkan form edit data
 	public function edit($id)
 	{
-		$data['title'] = 'Edit Penghasilan';
+		$data['title'] = 'Edit Penghasilan'; // judul halaman
 		$data['penghasilan'] = Penghasilan::find($id);
 
 		return view('penghasilan.edit', $data);
 	}
 
+	//mengedit data yang berada di penyimpanan
 	public function update($id, Request $request)
 	{
+		// validasi input 
 		$request->validate([
 			'nama_lengkap' => 'required',
 			'nik' => 'required|numeric',
 			'penghasilan_bulanan' => 'numeric|required',
 		]);
 
+		// mengambil data kategori untuk percabangan berdasarkan input penghasilan bulanan oleh user/pengguna
 		$kategori = Penghasilan::kategori($request->penghasilan_bulanan);
 
 		$data = [
-			'id' => uniqid(),
+			'id' => uniqid(), // id uniqid()
 			'nik' => $request->nik,
 			'nama_lengkap' => $request->nama_lengkap,
 			'penghasilan_bulanan' => $request->penghasilan_bulanan,
@@ -89,12 +96,14 @@ class PenghasilanController extends Controller
 		return redirect()->route('penghasilan.index')->with('sukses', 'Penghasilan berhasil diubah !');
 	}
 
+	//menghapus salah satu data di penyimpanan berdasarkan id.
 	public function destroy($id)
 	{
 		Penghasilan::delete($id);
 		return redirect()->back()->with('sukses', 'Data penghasilan berhasil dihapus !');
 	}
 
+	//melakukan export data
 	public function export()
 	{
 		$data = Penghasilan::all();

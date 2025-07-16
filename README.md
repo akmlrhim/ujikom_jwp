@@ -1,61 +1,127 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Tentu, saya akan perbaiki dokumentasi `README.md` agar sesuai dengan penggunaan penyimpanan data berbasis CSV, bukan database.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Berikut adalah versi `README.md` yang sudah disesuaikan:
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Nama Proyek Anda
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Sebuah deskripsi singkat tentang proyek Anda. Proyek ini dibangun dengan framework **Laravel** dan menggunakan **Tailwind CSS** untuk antarmuka pengguna yang cepat dan modern. Proyek ini menggunakan **file CSV** sebagai penyimpanan data.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Daftar Isi
 
-## Learning Laravel
+1.  [Persyaratan Sistem](https://www.google.com/search?q=%23persyaratan-sistem)
+2.  [Instalasi](https://www.google.com/search?q=%23instalasi)
+    -   [Kloning Repositori](https://www.google.com/search?q=%23kloning-repositori)
+    -   [Instalasi Dependencies](https://www.google.com/search?q=%23instalasi-dependencies)
+    -   [Konfigurasi Environment](https://www.google.com/search?q=%23konfigurasi-environment)
+    -   [Menyiapkan Penyimpanan Data](https://www.google.com/search?q=%23menyiapkan-penyimpanan-data)
+    -   [Menjalankan Server Lokal](https://www.google.com/search?q=%23menjalankan-server-lokal)
+3.  [Penggunaan](https://www.google.com/search?q=%23penggunaan)
+4.  [Struktur Proyek](https://www.google.com/search?q=%23struktur-proyek)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 1\. Persyaratan Sistem
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Pastikan sistem Anda telah menginstal beberapa hal berikut sebelum memulai:
 
-## Laravel Sponsors
+-   **PHP:** Versi 8.1 atau lebih tinggi
+-   **Composer:** [Manajer dependensi PHP](https://getcomposer.org/)
+-   **Node.js & NPM:** Untuk mengelola dependensi JavaScript
+-   **Git:** Untuk mengkloning repositori
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 2\. Instalasi
 
-### Premium Partners
+Ikuti langkah-langkah di bawah ini untuk menyiapkan proyek di lingkungan lokal Anda.
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Kloning Repositori
 
-## Contributing
+Buka terminal Anda dan jalankan perintah berikut untuk mengkloning proyek:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+git clone https://github.com/nama-pengguna/nama-proyek.git
+cd nama-proyek
+```
 
-## Code of Conduct
+### Instalasi Dependencies
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Instal semua dependensi PHP dan JavaScript yang diperlukan:
 
-## Security Vulnerabilities
+```bash
+composer install
+npm install
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Konfigurasi Environment
 
-## License
+Salin file `.env.example` dan ubah namanya menjadi `.env`.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+cp .env.example .env
+```
+
+Kemudian, generate _application key_ untuk mengamankan sesi pengguna dan data terenkripsi:
+
+```bash
+php artisan key:generate
+```
+
+### Menyiapkan Penyimpanan Data
+
+Proyek ini tidak menggunakan database relasional. Semua data disimpan dalam file CSV.
+
+-   File-file CSV akan berada di direktori `storage/app/data/`.
+-   Pastikan direktori tersebut ada dan memiliki izin tulis yang benar. Anda bisa membuatnya secara manual jika belum ada:
+
+<!-- end list -->
+
+```bash
+mkdir -p storage/app/data
+```
+
+Jika proyek Anda memiliki data awal, pastikan file CSV tersebut sudah ada di direktori yang benar sebelum menjalankan aplikasi.
+
+### Menjalankan Server Lokal
+
+Jalankan perintah berikut untuk memulai server pengembangan Laravel:
+
+```bash
+php artisan serve
+```
+
+Server akan berjalan di `http://127.0.0.1:8000`.
+
+Untuk mengkompilasi file CSS dengan Tailwind CSS dan mengaktifkan _live-reloading_ saat Anda melakukan perubahan pada _view_, buka terminal lain dan jalankan:
+
+```bash
+npm run dev
+```
+
+Jika Anda ingin mengkompilasi _asset_ untuk produksi, gunakan:
+
+```bash
+npm run build
+```
+
+## 3\. Penggunaan
+
+Setelah server berjalan, Anda dapat mengakses aplikasi melalui URL yang diberikan.
+
+-   Akses halaman beranda di: `http://127.0.0.1:8000`
+
+Jelaskan cara penggunaan aplikasi secara lebih detail di sini, misalnya:
+
+-   Cara menambah, mengubah, atau menghapus data (sesuai dengan implementasi CSV).
+-   Fitur-fitur utama yang tersedia.
+
+## 4\. Struktur Proyek
+
+Berikut adalah struktur direktori utama dari proyek ini:
+
+-   `app/`: Berisi semua _logic_ inti aplikasi Anda.
+-   `config/`: Berisi semua file konfigurasi.
+-   `public/`: Direktori yang dapat diakses publik, berisi file _asset_ terkompilasi.
+-   `resources/`: Berisi file _view_ (`.blade.php`) dan _asset_ mentah.
+-   `routes/`: Semua definisi rute aplikasi Anda.
+-   `storage/`: Berisi file _cache_, sesi, dan direktori data (`storage/app/data/`) yang menyimpan file-file CSV.
