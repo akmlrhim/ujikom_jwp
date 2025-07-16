@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
-use Illuminate\Support\Facades\Redis;
 
 class StudentController extends Controller
 {
@@ -12,8 +11,11 @@ class StudentController extends Controller
 	{
 		$data = [
 			'title' => 'Student Data',
-			'student' => Student::all()
+			'student' => Student::all(),
+			'count' => Student::count(),
 		];
+
+		// dd($data['student']);
 		// var_dump($data);
 		return view('student.index', $data);
 	}
@@ -33,6 +35,7 @@ class StudentController extends Controller
 			'name' => 'required|string|max:100',
 			'nim' => 'required|string|max:30',
 			'email' => 'required|email|max:70',
+			'status' => 'required|in:Aktif,Tidak Aktif',
 			'gender' => 'required|in:Male,Female',
 			'study_program' => 'required'
 		]);
@@ -74,6 +77,7 @@ class StudentController extends Controller
 			'name' => 'required|string|max:100',
 			'nim' => 'required|string|max:30',
 			'email' => 'required|email|max:70',
+			'status' => 'required|in:Aktif,Tidak Aktif',
 			'gender' => 'required|in:Male,Female',
 			'study_program' => 'required'
 		]);
@@ -84,7 +88,7 @@ class StudentController extends Controller
 
 	public function destroy($id)
 	{
-		Student::destroy($id);
+		Student::delete($id);
 		return redirect()->back()->with('success', 'Deleted student successfully !');
 	}
 }

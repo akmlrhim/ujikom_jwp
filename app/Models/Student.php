@@ -43,7 +43,7 @@ class Student
 		self::saveAll($students);
 	}
 
-	public static function destroy($id)
+	public static function delete($id)
 	{
 		$students = array_filter(self::all(), fn($student) => $student['id'] != $id);
 		self::saveAll(array_values($students));
@@ -52,5 +52,10 @@ class Student
 	public static function saveAll(array $students)
 	{
 		Storage::put(self::$path, json_encode($students, JSON_PRETTY_PRINT));
+	}
+
+	public static function count()
+	{
+		return count(self::all());
 	}
 }
