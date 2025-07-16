@@ -2,9 +2,7 @@
 
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\KategoriPenghasilanController;
-use App\Http\Controllers\LecturerController;
 use App\Http\Controllers\PenghasilanController;
-use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
