@@ -1,13 +1,3 @@
-Tentu, saya akan perbaiki dokumentasi `README.md` agar sesuai dengan penggunaan penyimpanan data berbasis CSV, bukan database.
-
-Berikut adalah versi `README.md` yang sudah disesuaikan:
-
----
-
-# Nama Proyek Anda
-
-Sebuah deskripsi singkat tentang proyek Anda. Proyek ini dibangun dengan framework **Laravel** dan menggunakan **Tailwind CSS** untuk antarmuka pengguna yang cepat dan modern. Proyek ini menggunakan **file CSV** sebagai penyimpanan data.
-
 ## Daftar Isi
 
 1.  [Persyaratan Sistem](https://www.google.com/search?q=%23persyaratan-sistem)
