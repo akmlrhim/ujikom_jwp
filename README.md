@@ -1,15 +1,3 @@
-## Daftar Isi
-
-1.  [Persyaratan Sistem](https://www.google.com/search?q=%23persyaratan-sistem)
-2.  [Instalasi](https://www.google.com/search?q=%23instalasi)
-    -   [Kloning Repositori](https://www.google.com/search?q=%23kloning-repositori)
-    -   [Instalasi Dependencies](https://www.google.com/search?q=%23instalasi-dependencies)
-    -   [Konfigurasi Environment](https://www.google.com/search?q=%23konfigurasi-environment)
-    -   [Menyiapkan Penyimpanan Data](https://www.google.com/search?q=%23menyiapkan-penyimpanan-data)
-    -   [Menjalankan Server Lokal](https://www.google.com/search?q=%23menjalankan-server-lokal)
-3.  [Penggunaan](https://www.google.com/search?q=%23penggunaan)
----
-
 ## 1\. Persyaratan Sistem
 
 Pastikan sistem Anda telah menginstal beberapa hal berikut sebelum memulai:
