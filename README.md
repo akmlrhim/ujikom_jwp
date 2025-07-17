@@ -8,8 +8,6 @@
     -   [Menyiapkan Penyimpanan Data](https://www.google.com/search?q=%23menyiapkan-penyimpanan-data)
     -   [Menjalankan Server Lokal](https://www.google.com/search?q=%23menjalankan-server-lokal)
 3.  [Penggunaan](https://www.google.com/search?q=%23penggunaan)
-4.  [Struktur Proyek](https://www.google.com/search?q=%23struktur-proyek)
-
 ---
 
 ## 1\. Persyaratan Sistem
@@ -30,8 +28,8 @@ Ikuti langkah-langkah di bawah ini untuk menyiapkan proyek di lingkungan lokal A
 Buka terminal Anda dan jalankan perintah berikut untuk mengkloning proyek:
 
 ```bash
-git clone https://github.com/nama-pengguna/nama-proyek.git
-cd nama-proyek
+git clone https://github.com/akmlrhim/ujikom_jwp.git
+cd ujikom_jwp
 ```
 
 ### Instalasi Dependencies
@@ -105,13 +103,3 @@ Jelaskan cara penggunaan aplikasi secara lebih detail di sini, misalnya:
 -   Cara menambah, mengubah, atau menghapus data (sesuai dengan implementasi CSV).
 -   Fitur-fitur utama yang tersedia.
 
-## 4\. Struktur Proyek
-
-Berikut adalah struktur direktori utama dari proyek ini:
-
--   `app/`: Berisi semua _logic_ inti aplikasi Anda.
--   `config/`: Berisi semua file konfigurasi.
--   `public/`: Direktori yang dapat diakses publik, berisi file _asset_ terkompilasi.
--   `resources/`: Berisi file _view_ (`.blade.php`) dan _asset_ mentah.
--   `routes/`: Semua definisi rute aplikasi Anda.
--   `storage/`: Berisi file _cache_, sesi, dan direktori data (`storage/app/data/`) yang menyimpan file-file CSV.
