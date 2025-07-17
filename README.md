@@ -85,9 +85,3 @@ npm run build
 Setelah server berjalan, Anda dapat mengakses aplikasi melalui URL yang diberikan.
 
 -   Akses halaman beranda di: `http://127.0.0.1:8000`
-
-Jelaskan cara penggunaan aplikasi secara lebih detail di sini, misalnya:
-
--   Cara menambah, mengubah, atau menghapus data (sesuai dengan implementasi CSV).
--   Fitur-fitur utama yang tersedia.
-
